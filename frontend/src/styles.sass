@@ -1,0 +1,674 @@
+@import './sass/variables'
+    
+* 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
+    font-feature-settings: 'liga', 'kern'
+    text-rendering: optimizeLegibility
+    padding: 0px
+    margin: 0px
+
+html, 
+body, 
+.root 
+    width: 100%
+    height: 100%
+    background: $color-background
+    margin: 0px
+    padding: 0px
+
+a 
+    text-decoration: none
+
+.row
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    align-content: center
+    display: flex
+    flex: 1
+
+.column
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    align-content: center
+    display: flex
+    flex: 1
+
+.nf
+    flex: none
+
+.flex-1
+    display: flex
+    flex: 1
+
+.cl-white
+    color: $color-white
+.cl-gray-100
+    color: $color-gray-100
+.cl-gray-200
+    color: $color-gray-200
+.cl-gray-300
+    color: $color-gray-300
+.cl-gray-400
+    color: $color-gray-400
+.cl-gray-500
+    color: $color-gray-500
+.cl-gray-600
+    color: $color-gray-600
+.cl-gray-700
+    color: $color-gray-700
+.cl-gray-800
+    color: $color-gray-800
+.cl-gray-900
+    color: $color-gray-900
+.cl-electric
+    color: $color-electric
+.cl-green
+    color: $color-green
+.cl-green-washout
+    color: $color-green-washout
+.cl-aqua
+    color: $color-aqua
+.cl-aqua-washout
+    color: $color-aqua
+.cl-aqua-dark
+    color: $color-aqua
+.cl-electric
+    color: $color-electric
+.cl-blue
+    color: $color-blue
+.cl-purple
+    color: $color-purple
+.cl-magenta
+    color: $color-magenta
+.cl-yellow
+    color: $color-yellow
+.cl-red
+    color: $color-red
+.cl-red-washout
+    color: $color-red
+.cl-orange
+    color: $color-orange
+.cl-orange-washout
+    color: $color-orange-washout
+
+.bdr
+    border: 1px solid $color-gray-500
+.bdr-top
+    border-top: 1px solid $color-gray-500
+.bdr-bottom
+    border-bottom: 1px solid $color-gray-500
+.bdr-left
+    border-left: 1px solid $color-gray-500
+.bdr-right
+    border-right: 1px solid $color-gray-500
+
+.bdr-cl-transparent
+    border-color: transparent
+.bdr-cl-white
+    border-color: $color-white
+.bdr-cl-gray-100
+    border-color: $color-gray-100
+.bdr-cl-gray-200
+    border-color: $color-gray-200
+.bdr-cl-gray-300
+    border-color: $color-gray-300
+.bdr-cl-gray-400
+    border-color: $color-gray-400
+.bdr-cl-gray-500
+    border-color: $color-gray-500
+.bdr-cl-gray-600
+    border-color: $color-gray-600
+.bdr-cl-gray-700
+    border-color: $color-gray-700
+.bdr-cl-gray-800
+    border-color: $color-gray-800
+.bdr-cl-gray-900
+    border-color: $color-gray-900
+.bdr-cl-electric
+    border-color: $color-electric
+.bdr-cl-green
+    border-color: $color-green
+.bdr-cl-green-washout
+    border-color: $color-green-washout
+.bdr-cl-aqua
+    border-color: $color-aqua
+.bdr-cl-aqua-washout
+    border-color: $color-aqua
+.bdr-cl-aqua-dark
+    border-color: $color-aqua
+.bdr-cl-electric
+    border-color: $color-electric
+.bdr-cl-blue
+    border-color: $color-blue
+.bdr-cl-purple
+    border-color: $color-purple
+.bdr-cl-magenta
+    border-color: $color-magenta
+.bdr-cl-yellow
+    border-color: $color-yellow
+.bdr-cl-red
+    border-color: $color-red
+.bdr-cl-red-washout
+    border-color: $color-red
+.bdr-cl-orange
+    border-color: $color-orange
+.bdr-cl-orange-washout
+    border-color: $color-orange-washout
+
+.bg-cl-white
+    background-color: $color-white
+.bg-cl-gray-100
+    background-color: $color-gray-100
+.bg-cl-gray-200
+    background-color: $color-gray-200
+.bg-cl-gray-300
+    background-color: $color-gray-300
+.bg-cl-gray-400
+    background-color: $color-gray-400
+.bg-cl-gray-500
+    background-color: $color-gray-500
+.bg-cl-gray-600
+    background-color: $color-gray-600
+.bg-cl-gray-700
+    background-color: $color-gray-700
+.bg-cl-gray-800
+    background-color: $color-gray-800
+.bg-cl-gray-900
+    background-color: $color-gray-900
+.bg-cl-electric
+    background-color: $color-electric
+.bg-cl-green
+    background-color: $color-green
+.bg-cl-green-washout
+    background-color: $color-green-washout
+.bg-cl-aqua
+    background-color: $color-aqua
+.bg-cl-aqua-washout
+    background-color: $color-aqua
+.bg-cl-aqua-dark
+    background-color: $color-aqua
+.bg-cl-electric
+    background-color: $color-electric
+.bg-cl-blue
+    background-color: $color-blue
+.bg-cl-purple
+    background-color: $color-purple
+.bg-cl-magenta
+    background-color: $color-magenta
+.bg-cl-yellow
+    background-color: $color-yellow
+.bg-cl-red
+    background-color: $color-red
+.bg-cl-red-washout
+    background-color: $color-red
+.bg-cl-orange
+    background-color: $color-orange
+.bg-cl-orange-washout
+    background-color: $color-orange-washout
+
+.bg-cl-white__hover:hover
+    background-color: $color-white
+.bg-cl-gray-100__hover:hover
+    background-color: $color-gray-100
+.bg-cl-gray-200__hover:hover
+    background-color: $color-gray-200
+.bg-cl-gray-300__hover:hover
+    background-color: $color-gray-300
+.bg-cl-gray-400__hover:hover
+    background-color: $color-gray-400
+.bg-cl-gray-500__hover:hover
+    background-color: $color-gray-500
+.bg-cl-gray-600__hover:hover
+    background-color: $color-gray-600
+.bg-cl-gray-700__hover:hover
+    background-color: $color-gray-700
+.bg-cl-gray-800__hover:hover
+    background-color: $color-gray-800
+.bg-cl-gray-900__hover:hover
+    background-color: $color-gray-900
+.bg-cl-electric__hover:hover
+    background-color: $color-electric
+.bg-cl-green__hover:hover
+    background-color: $color-green
+.bg-cl-green-washout__hover:hover
+    background-color: $color-green-washout
+.bg-cl-aqua__hover:hover
+    background-color: $color-aqua
+.bg-cl-aqua-washout__hover:hover
+    background-color: $color-aqua
+.bg-cl-aqua-dark__hover:hover
+    background-color: $color-aqua
+.bg-cl-electric__hover:hover
+    background-color: $color-electric
+.bg-cl-blue__hover:hover
+    background-color: $color-blue
+.bg-cl-purple__hover:hover
+    background-color: $color-purple
+.bg-cl-magenta__hover:hover
+    background-color: $color-magenta
+.bg-cl-yellow__hover:hover
+    background-color: $color-yellow
+.bg-cl-red__hover:hover
+    background-color: $color-red
+.bg-cl-red-washout__hover:hover
+    background-color: $color-red
+.bg-cl-orange__hover:hover
+    background-color: $color-orange
+.bg-cl-orange-washout__hover:hover
+    background-color: $color-orange-washout
+
+.bdr-r-900
+    border-radius: $layout-900
+.bdr-r-800
+    border-radius: $layout-800
+.bdr-r-700
+    border-radius: $layout-700
+.bdr-r-600
+    border-radius: $layout-600
+.bdr-r-500
+    border-radius: $layout-500
+.bdr-r-400
+    border-radius: $layout-400
+.bdr-r-300
+    border-radius: $layout-300
+.bdr-r-200
+    border-radius: $layout-200
+.bdr-r-100
+    border-radius: $layout-100
+.bdr-r-none
+    border-radius: $layout-none
+.bdr-r-auto
+    border-radius: $layout-auto
+
+.bdr-r-tl-900
+    border-top-left-radius: $layout-900
+.bdr-r-tl-800
+    border-top-left-radius: $layout-800
+.bdr-r-tl-700
+    border-top-left-radius: $layout-700
+.bdr-r-tl-600
+    border-top-left-radius: $layout-600
+.bdr-r-tl-500
+    border-top-left-radius: $layout-500
+.bdr-r-tl-400
+    border-top-left-radius: $layout-400
+.bdr-r-tl-300
+    border-top-left-radius: $layout-300
+.bdr-r-tl-200
+    border-top-left-radius: $layout-200
+.bdr-r-tl-100
+    border-top-left-radius: $layout-100
+.bdr-r-tl-none
+    border-top-left-radius: $layout-none
+.bdr-r-tl-auto
+    border-top-left-radius: $layout-auto
+
+.bdr-r-tr-900
+    border-top-right-radius: $layout-900
+.bdr-r-tr-800
+    border-top-right-radius: $layout-800
+.bdr-r-tr-700
+    border-top-right-radius: $layout-700
+.bdr-r-tr-600
+    border-top-right-radius: $layout-600
+.bdr-r-tr-500
+    border-top-right-radius: $layout-500
+.bdr-r-tr-400
+    border-top-right-radius: $layout-400
+.bdr-r-tr-300
+    border-top-right-radius: $layout-300
+.bdr-r-tr-200
+    border-top-right-radius: $layout-200
+.bdr-r-tr-100
+    border-top-right-radius: $layout-100
+.bdr-r-tr-none
+    border-top-right-radius: $layout-none
+.bdr-r-tr-auto
+    border-top-right-radius: $layout-auto
+
+.m-900
+    margin: $layout-900
+.m-800
+    margin: $layout-800
+.m-700
+    margin: $layout-700
+.m-600
+    margin: $layout-600
+.m-500
+    margin: $layout-500
+.m-400
+    margin: $layout-400
+.m-300
+    margin: $layout-300
+.m-200
+    margin: $layout-200
+.m-100
+    margin: $layout-100
+.m-none
+    margin: $layout-none
+.m-auto
+    margin: $layout-auto
+
+.mr-900
+    margin-right: $layout-900
+.mr-800
+    margin-right: $layout-800
+.mr-700
+    margin-right: $layout-700
+.mr-600
+    margin-right: $layout-600
+.mr-500
+    margin-right: $layout-500
+.mr-400
+    margin-right: $layout-400
+.mr-300
+    margin-right: $layout-300
+.mr-200
+    margin-right: $layout-200
+.mr-100
+    margin-right: $layout-100
+.mr-none
+    margin-right: $layout-none
+.mr-auto
+    margin-right: $layout-auto
+
+.ml-900
+    margin-left: $layout-900
+.ml-800
+    margin-left: $layout-800
+.ml-700
+    margin-left: $layout-700
+.ml-600
+    margin-left: $layout-600
+.ml-500
+    margin-left: $layout-500
+.ml-400
+    margin-left: $layout-400
+.ml-300
+    margin-left: $layout-300
+.ml-200
+    margin-left: $layout-200
+.ml-100
+    margin-left: $layout-100
+.ml-none
+    margin-left: $layout-none
+.ml-auto
+    margin-left: $layout-auto
+
+.mt-900
+    margin-top: $layout-900
+.mt-800
+    margin-top: $layout-800
+.mt-700
+    margin-top: $layout-700
+.mt-600
+    margin-top: $layout-600
+.mt-500
+    margin-top: $layout-500
+.mt-400
+    margin-top: $layout-400
+.mt-300
+    margin-top: $layout-300
+.mt-200
+    margin-top: $layout-200
+.mt-100
+    margin-top: $layout-100
+.mt-none
+    margin-top: $layout-none
+.mt-auto
+    margin-top: $layout-auto
+
+.mb-900
+    margin-bottom: $layout-900
+.mb-800
+    margin-bottom: $layout-800
+.mb-700
+    margin-bottom: $layout-700
+.mb-600
+    margin-bottom: $layout-600
+.mb-500
+    margin-bottom: $layout-500
+.mb-400
+    margin-bottom: $layout-400
+.mb-300
+    margin-bottom: $layout-300
+.mb-200
+    margin-bottom: $layout-200
+.mb-100
+    margin-bottom: $layout-100
+.mb-none
+    margin-bottom: $layout-none
+.mb-auto
+    margin-bottom: $layout-auto
+
+.p-900
+    padding: $layout-900
+.p-800
+    padding: $layout-800
+.p-700
+    padding: $layout-700
+.p-600
+    padding: $layout-600
+.p-500
+    padding: $layout-500
+.p-400
+    padding: $layout-400
+.p-300
+    padding: $layout-300
+.p-200
+    padding: $layout-200
+.p-100
+    padding: $layout-100
+.p-none
+    padding: $layout-none
+.p-auto
+    padding: $layout-auto
+
+.pr-900
+    padding-right: $layout-900
+.pr-800
+    padding-right: $layout-800
+.pr-700
+    padding-right: $layout-700
+.pr-600
+    padding-right: $layout-600
+.pr-500
+    padding-right: $layout-500
+.pr-400
+    padding-right: $layout-400
+.pr-300
+    padding-right: $layout-300
+.pr-200
+    padding-right: $layout-200
+.pr-100
+    padding-right: $layout-100
+.pr-none
+    padding-right: $layout-none
+.pr-auto
+    padding-right: $layout-auto
+
+.pl-900
+    padding-left: $layout-900
+.pl-800
+    padding-left: $layout-800
+.pl-700
+    padding-left: $layout-700
+.pl-600
+    padding-left: $layout-600
+.pl-500
+    padding-left: $layout-500
+.pl-400
+    padding-left: $layout-400
+.pl-300
+    padding-left: $layout-300
+.pl-200
+    padding-left: $layout-200
+.pl-100
+    padding-left: $layout-100
+.pl-none
+    padding-left: $layout-none
+.pl-auto
+    padding-left: $layout-auto
+
+.pt-900
+    padding-top: $layout-900
+.pt-800
+    padding-top: $layout-800
+.pt-700
+    padding-top: $layout-700
+.pt-600
+    padding-top: $layout-600
+.pt-500
+    padding-top: $layout-500
+.pt-400
+    padding-top: $layout-400
+.pt-300
+    padding-top: $layout-300
+.pt-200
+    padding-top: $layout-200
+.pt-100
+    padding-top: $layout-100
+.pt-none
+    padding-top: $layout-none
+.pt-auto
+    padding-top: $layout-auto
+
+.pb-900
+    padding-bottom: $layout-900
+.pb-800
+    padding-bottom: $layout-800
+.pb-700
+    padding-bottom: $layout-700
+.pb-600
+    padding-bottom: $layout-600
+.pb-500
+    padding-bottom: $layout-500
+.pb-400
+    padding-bottom: $layout-400
+.pb-300
+    padding-bottom: $layout-300
+.pb-200
+    padding-bottom: $layout-200
+.pb-100
+    padding-bottom: $layout-100
+.pb-none
+    padding-bottom: $layout-none
+.pb-auto
+    padding-bottom: $layout-auto
+
+.hide
+    display: none
+
+.flex-none
+    flex: none
+.flex-1
+    flex: 1
+.flex-2
+    flex: 2
+.flex-3
+    flex: 3
+.flex-4
+    flex: 4
+
+.h-100
+    height: 100%
+
+.w-100
+    width: 100%
+
+.ta-center
+    text-align: center
+.ta-left
+    text-align: left
+.ta-right
+    text-align: right
+
+.cursor-pointer
+    cursor: pointer
+
+.text-bold
+    font-weight: bold
+.fw-100
+    font-weight: 100 !important
+.fw-200
+    font-weight: 200 !important
+.fw-300
+    font-weight: 300 !important
+.fw-400
+    font-weight: 400 !important
+.fw-500
+    font-weight: 500 !important
+.fw-600
+    font-weight: 600 !important
+.fw-700
+    font-weight: 700 !important
+.fw-800
+    font-weight: 800 !important
+.fw-900
+    font-weight: 900 !important
+
+.fs-100
+    font-size: $text-size-100 !important
+.fs-200
+    font-size: $text-size-200 !important
+.fs-300
+    font-size: $text-size-300 !important
+.fs-400
+    font-size: $text-size-400 !important
+.fs-500
+    font-size: $text-size-500 !important
+.fs-600
+    font-size: $text-size-600 !important
+.fs-700
+    font-size: $text-size-700 !important
+.fs-800
+    font-size: $text-size-800 !important
+.fs-900
+    font-size: $text-size-900 !important
+
+.o-hidden
+    overflow: hidden
+.o-scroll
+    overflow: scroll
+.o-visible
+    overflow: visible
+
+.p-relative
+    position: relative
+.p-absolute
+    position: absolute
+.p-fixed
+    position: fixed
+.p-inline
+    position: inline
+
+.top-0
+    top: 0rem
+.left-0
+    left: 0rem
+.right-0
+    right: 0rem
+.bottom-0
+    bottom: 0rem
+
+.buttonize
+    cursor: pointer
+    opacity: 1
+    transition: opacity .2s
+
+.buttonize:hover
+    opacity: 0.8
+
+* 
+    transition: background-color .1s
+
+.t-uppercase
+    text-transform: uppercase
+
+.t-underline
+    text-decoration: underline
+
+.blur
+    filter: blur(0.5rem)

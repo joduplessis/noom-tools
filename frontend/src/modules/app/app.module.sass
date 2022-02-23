@@ -1,0 +1,21 @@
+@import '../../sass/variables'
+
+.app-module
+    position: absolute
+    left: 0px
+    top: 0px
+    width: 100%
+    height: 100%
+    z-index: 2
+
+.app-module__container
+    position: absolute
+    left: $nav-size 
+    top: $nav-size
+    width: calc(100% - #{$nav-size})
+    height: calc(100% - #{$nav-size})
+    overflow: auto
+
+.app-module__padding
+    padding: $padding-app
+    
