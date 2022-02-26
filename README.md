@@ -8,7 +8,7 @@ The API is built with Fastify & support multiple hooks for integrating with Post
 
 ## Frontend
 
-The frontend is built with React, a custom Webpack config & n opinionated way of creating & organizing code. There are also specific hooks that make difficult tasks very easy. Some of them are:
+The frontend is built with React, a custom Webpack config & an opinionated way of creating & organizing code. There are also specific hooks that make difficult tasks very easy. Some of them are:
 - S3 file uploads
 - Realtime communication in a friendly manner
 - Custom authentication

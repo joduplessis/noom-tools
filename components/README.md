@@ -20,24 +20,10 @@ Make sure you have the required global packages installed. In the root of this p
 npm install
 ```
 
-### Publishing
+### Scripts
 
 ```
-npm publish
-```
-
-### Releases
-
-Tag the release with Git.
-
-```
-git tag v0.0.1
-git push origin v0.0.1
-```
-
-#### Important scripts
-
-```
+npm publish - publish to NPM
 npm run storybook - launches the Storybook applet in a new browser tab
 npm run build:prod - builds the library, ready to publish
 ```
