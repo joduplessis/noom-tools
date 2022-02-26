@@ -11,7 +11,7 @@ The API is built with Fastify & support multiple hooks for integrating with Post
 The frontend is built with React, a custom Webpack config & an opinionated way of creating & organizing code. There are also specific hooks that make difficult tasks very easy. Some of them are:
 - S3 file uploads
 - Realtime communication in a friendly manner
-- Custom authentication
+- Custom authentication (integrated with the Fastify API)
 
 ## Storybook
 
@@ -22,5 +22,6 @@ The component libary is built using Storybook & exportable as a standlone UI lib
 - Documentation, sorry about that. Please see each folder for a README with more details.
 - Sample app integrating the 3 aspects
 - Testing & code coverage
+- Better type usages
 
 Any feedback is of course welcome
