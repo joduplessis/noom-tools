@@ -3,7 +3,7 @@
 Use:
 
 ```
-import { Loading, Spinner } from '@noomtools/ui'
+import { View } from '@noomtools/ui'
 import '@noomtools/ui/dist/index.css'
 ```
 
@@ -20,16 +20,6 @@ Make sure you have the required global packages installed. In the root of this p
 npm install
 ```
 
-### Package.json versioning
-
-A modified CalVer is utilized as a versioning system. For example;
-
-```
-"version": "21.2.18-3"
-```
-
-This indicates the 3rd patch for a release on 18 February 2021.
-
 ### Publishing
 
 ```
@@ -41,14 +31,14 @@ npm publish
 Tag the release with Git.
 
 ```
-git tag ui/v21.2.18-3
-git push origin ui/v21.2.18-3
+git tag v0.0.1
+git push origin v0.0.1
 ```
 
 #### Important scripts
 
 ```
-npm run storybook - launchs the Storybook applet in a new browser tab
+npm run storybook - launches the Storybook applet in a new browser tab
 npm run build:prod - builds the library, ready to publish
 ```
 

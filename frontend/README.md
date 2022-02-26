@@ -70,10 +70,6 @@ Static assets (images, PDF's, etc.) can be added to `src/assets` which will outp
 
 Exports needs to have a _named_ export module (_not default_). The name needs to be based on the filename, but converted to camel-casing. By example; the `about.page.tsx` should export a named class or function, called `AboutPage`.
 
-### Authentication
-
-Authentication is handled by **auth0**. `withAuthenticationRequired` is used to wrap pages to ensure athentication is enforced.
-
 ### Modules
 
 Modules form top level encapsulated components & represent top level URL paths (where possible). Any subsequent routing within this URL path should be accomplished within the module (class or function) themselves. Modules must be added to the `src/modules` directory. By example; `src/modules/[MODULE_NAME]/[MODULE_NAME].module.tsx`.

@@ -118,8 +118,6 @@ export const IconComponent: FunctionComponent<IIconComponent> = (props: IIconCom
                 return <BiCoin size={size} width={size} height={size} color={color} />
             case 'x':
                 return <BiX size={size} width={size} height={size} color={color} />
-            case 'integrations':
-                return <VscSettings size={size} width={size} height={size} color={color} />
             case 'settings':
                 return <IoSettingsOutline size={size} width={size} height={size} color={color} />
             default:
