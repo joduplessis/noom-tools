@@ -45,5 +45,6 @@ messageListener('user-007', (message) => {
 - Better & more complete frontend app
 - Testing & code coverage
 - Better type usages
+- Terraform deployment guide
 
 Any feedback is of course welcome!
