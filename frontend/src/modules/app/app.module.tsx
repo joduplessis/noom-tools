@@ -7,7 +7,7 @@ import { AppContext } from '../../contexts/app.context'
 import { WebsocketProvider } from '../../contexts/websocket.context'
 import { redirectForbidden } from '../../helpers/util'
 import { useAuth } from '../../hooks/auth.hook'
-import { useWebsocket } from '../../hooks/websocket.hook'
+import { useSubscription, useWebsocket } from '../../hooks/websocket.hook'
 import { AuthService } from '../../modules/auth/services/auth.service'
 import { IRoute } from '../../types/IRoute'
 import './app.module.sass'
@@ -23,6 +23,14 @@ const App = (props: any) => {
         onError: (error: any) => redirectForbidden(history, error),
     }) 
 
+    useEffect(() => {
+        const { messageListener } = useSubscription()
+
+        messageListener('user-007', (message) => {
+            // Do something here with the message
+        })
+    }, [connected])
+    
     return (
         <div className="app-module">
             <div className="app-module__container">
