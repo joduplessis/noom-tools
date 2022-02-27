@@ -28,7 +28,7 @@ There are usually things that every product/project needs to do - Noom Tools aim
 const { messageListener } = useSubscription()
 
 messageListener('user-007', (message) => {
-    // Do something here wth the message
+    // Do something here with the message
 })
 ```  
 
