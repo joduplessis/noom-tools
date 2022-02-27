@@ -34,14 +34,14 @@ messageListener('user-007', (message) => {
 
 ## What this isn't (or doesn't have)
 
-- An unopinionated approach (sorry!)
 - GraphQL
 - Styled Components or Emotion
 - A finished & complete product
+- An unopinionated approach (sorry!)
 
 ## Roadmap
 
-- Documentation, sorry about that. Please see each folder for a README with more details.
+- Documentation - please see each folder for a README with more details
 - Better & more complete frontend app
 - Testing & code coverage
 - Better type usages
