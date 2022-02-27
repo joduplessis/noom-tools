@@ -1,27 +1,49 @@
-# Noom Tools v 0.0.1
+# Noom Tools v0.0.1
 
 Noom Tools is an opinionated boilerplate for creating realtime & component driven JAMStack apps. 
 
-## API
+## What does this solve?
 
-The API is built with Fastify & support multiple hooks for integrating with Postmark, JWT authnetication, TypeOrm & claims based token validation to keep database requests secure for each tenant. 
+There are usually things that every product/project needs to do - Noom Tools aims to be a starter kit for building quickly without a lot of reliance on 3rd party libs & frameworks. 
 
-## Frontend
+- Typescript & linting everywhere
+- An API built with Fastify
+- A component library & frontend built with React (already ingrated with the API)
+- Realtime communication using websockets, Socket.io & Redis (for scaling the service)
+- Custom JWT based authentication & claims 
+- Tenant security at API level & also websocket subscription level
+- Mail service for integrating Postmark (easily replacable by any other service)
+- Secure S3 file uploads & downloads (Digital Ocean Spaces is supported too)
+- TypeOrm integration
+- A publishable UI library powered by Storybook
+- Prettier integration for a post-commit hook
+- PubSub service for the frontend
+- Storage for the frontend using LocalStorage (not cookies)
+- Sass everywhere for styles using [BEM](http://getbem.com/)
+- A modular pattern for building a frontend application in a scalable way
+- Sentry integration for catching errors
+- A customizable webpack config geared for multi stage deployments
+- A set of easy to use React Hooks that makes integrating difficult tasks easy, listening for websocket events is as simple as:
+```
+const { messageListener } = useSubscription()
 
-The frontend is built with React, a custom Webpack config & an opinionated way of creating & organizing code. There are also specific hooks that make difficult tasks very easy. Some of them are:
-- S3 file uploads
-- Realtime communication in a friendly manner
-- Custom authentication (integrated with the Fastify API)
+messageListener('user-007', (message) => {
+    // Do something here wth the message
+})
+```  
 
-## Storybook
+## What this isn't (or doesn't have)
 
-The component libary is built using Storybook & exportable as a standlone UI library via the NPM registry.
+- An unopinionated approach (sorry!)
+- GraphQL
+- Styled Components or Emotion
+- A finished & complete product
 
 ## Roadmap
 
 - Documentation, sorry about that. Please see each folder for a README with more details.
-- Sample app integrating the 3 aspects
+- Better & more complete frontend app
 - Testing & code coverage
 - Better type usages
 
-Any feedback is of course welcome
+Any feedback is of course welcome!
