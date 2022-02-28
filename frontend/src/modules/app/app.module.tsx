@@ -12,13 +12,14 @@ import { AuthService } from '../../modules/auth/services/auth.service'
 import { IRoute } from '../../types/IRoute'
 import './app.module.sass'
 import { AppRoutes } from './app.routes'
+import { UsersService } from './services/users.service'
 
 const App = (props: any) => {
     const history = useHistory()
     const app = useContext(AppContext)
     const { getToken } = useAuth()
     const { error, disconnected, connected } = useWebsocket()
-    const user = useQuery(['AuthService.me'], async () => await AuthService.me(getToken()), {
+    const user = useQuery(['AuthService.me'], async () => await UsersService.get(getToken()), {
         initialData: {},
         onError: (error: any) => redirectForbidden(history, error),
     }) 
