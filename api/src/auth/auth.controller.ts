@@ -5,7 +5,6 @@ import { UsersService } from '../users/users.service'
 import { AuthService } from './auth.service'
 
 export default async (fastify, opts) => {
-    const options = { preValidation: [fastify.authenticate] }
 
     fastify.post('/auth/login', {}, async (request, reply) => {
         try {
@@ -68,41 +67,6 @@ export default async (fastify, opts) => {
             if (!user) throw 'Not found'
 
             return await UsersService.update(fastify, { id: user.id, password, resetToken: null })
-        } catch (error) {
-            throw Error(error)
-        }
-    })
-
-    // These require an auth token
-
-    fastify.get('/auth/re-issue-jwt', options, async (request, reply) => {
-        try {
-            const { sub, email } = request.user
-            const claims = AuthService.getClaims(fastify, sub)
-            const token = AuthService.getToken(fastify, sub, email, claims)
-            
-            return { token }
-        } catch (error) {
-            throw Error(error)
-        }
-    })
-
-    fastify.put('/auth/update-me', options, async (request, reply) => {
-        try {
-            const { sub } = request.user
-            const { name, image, email, password } = request.body
-
-            return UsersService.update(fastify, { id: sub, name, image, email, password })
-        } catch (error) {
-            throw Error(error)
-        }
-    })
-
-    fastify.get('/auth/me', options, async (request, reply) => {
-        try {
-            const { sub, email } = request.user
-
-            return await UsersService.findOne(fastify, sub)
         } catch (error) {
             throw Error(error)
         }

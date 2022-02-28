@@ -76,33 +76,6 @@ export function useAuth() {
         }
     }
 
-    const reIssueToken = async (): Promise<string> => {
-        try {
-            const { token } = await AuthService.reIssueToken(getToken())
-            saveToken(token)
-            return token
-        } catch (error) {
-            throw Error(error)
-        }
-    }
-
-    const updateMe = async (values: any): Promise<any> => {
-        try {
-            await AuthService.updateMe(getToken(), values)
-            return true
-        } catch (error) {
-            throw Error(error)
-        }
-    }
-
-    const getMe = async () => {
-        try {
-            return await AuthService.me(getToken())
-        } catch (error) {
-            throw Error(error)
-        }
-    }
-
     return {
         saveToken,
         getUserId,
@@ -114,8 +87,5 @@ export function useAuth() {
         createAccount,
         resetPassword,
         updatePassword,
-        reIssueToken,
-        updateMe,
-        getMe,
     }
 }
