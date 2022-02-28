@@ -37,6 +37,8 @@ export function useAuth() {
         deleteStorage(NOOM_JWT)
     }
 
+    // These are API driven hooks
+
     const login = async (email: string, password: string): Promise<any> => {
         try {
             const { token } = await AuthService.login(email, password)
