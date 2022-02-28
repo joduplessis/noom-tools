@@ -79,8 +79,9 @@ export default async (fastify, opts) => {
         try {
             const { sub, email } = request.user
             const claims = AuthService.getClaims(fastify, sub)
-
-            return AuthService.getToken(fastify, sub, email, claims)
+            const token = AuthService.getToken(fastify, sub, email, claims)
+            
+            return { token }
         } catch (error) {
             throw Error(error)
         }
