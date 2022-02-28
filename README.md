@@ -8,6 +8,7 @@ There are usually things that every product/project needs to do - Noom Tools aim
 
 - Typescript & linting everywhere
 - A RESTful API built with Fastify
+- Test setup & some preliminary tests with Supertest & Tap
 - A component library & frontend built with React (already ingrated with the API)
 - Realtime communication using websockets, Socket.io & Redis (for scaling the service)
 - Custom JWT based authentication & claims 
