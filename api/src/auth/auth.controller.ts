@@ -11,6 +11,9 @@ export default async (fastify, opts) => {
         try {
             const { email, password } = request.body
             const user: User = await AuthService.validateUser(fastify, email, password)
+
+            if (!user) throw Error('not found')
+
             const userId = user.id
             const claims = await AuthService.getClaims(fastify, userId)
 
@@ -40,18 +43,18 @@ export default async (fastify, opts) => {
         }
     })
 
-    fastify.post('/auth/reset-password', {}, async (request, reply) => {
+    fastify.put('/auth/reset-password', {}, async (request, reply) => {
         try {
             const { email } = request.body
             const token = uuidv4()
-            const user: any = UsersService.findOneWithEmail(fastify, email)
+            const user: any = await UsersService.findOneWithEmail(fastify, email)
 
             if (!user) throw 'Not found'
 
             await UsersService.update(fastify, { id: user.id, resetToken: token })
-            await MailService.sendPasswordReset(fastify, email, token)
-
-            return { success: true }
+            await MailService.sendPasswordReset(fastify, email, token) 
+            
+            return { success: true, token }
         } catch (error) {
             throw Error(error)
         }

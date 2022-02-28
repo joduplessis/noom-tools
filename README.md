@@ -45,9 +45,9 @@ messageListener('user-007', (message) => {
 
 - Documentation - please see each folder for a README with more details
 - Better & more complete frontend app
-- Testing & code coverage
+- More tests
 - Better type usages
-- Terraform deployment guide
+- Terraform deployment guide (TBC)
 
 ---
 

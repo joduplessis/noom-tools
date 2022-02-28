@@ -1,6 +1,6 @@
-
 export const MailService = {
     sendTest: async (fastify: any) => {
+        /* 
         fastify.mail.sendEmail({
             From: 'support@noomtools',
             To: 'support@noomtools',
@@ -8,10 +8,12 @@ export const MailService = {
             HtmlBody: '<strong>Hello</strong> dear Postmark user.',
             TextBody: 'Hello from Postmark!',
             MessageStream: 'outbound',
-        })
+        }) 
+        */
     },
 
     sendWelcome: async (fastify: any, email: string) => {
+        /*
         fastify.mail.sendEmailWithTemplate({
             From: 'support@noomtools',
             To: email,
@@ -19,9 +21,11 @@ export const MailService = {
             TemplateAlias: 'welcome',
             TemplateModel: {},
         })
+        */
     },
 
     sendPasswordReset: async (fastify: any, email: string, token: string) => {
+        /*
         fastify.mail.sendEmailWithTemplate({
             From: 'support@noomtools',
             To: email,
@@ -29,5 +33,6 @@ export const MailService = {
             TemplateAlias: 'password-reset',
             TemplateModel: { token },
         })
+        */
     },
 }

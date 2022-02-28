@@ -14,11 +14,11 @@ export const UsersService = {
     },
 
     findOneWithEmail: async (fastify: any, email: string): Promise<User> => {
-        return await fastify.orm.getRepository(User).findOne({ email })
+        return await fastify.orm.getRepository(User).findOne({ where: { email } })
     },
 
     findOneWithEmailAndResetToken: async (fastify: any, email: string, resetToken: string): Promise<User> => {
-        return await fastify.orm.getRepository(User).findOne({ email, resetToken })
+        return await fastify.orm.getRepository(User).findOne({ where: { email, resetToken } })
     },
 
     create: async (fastify: any, user: any): Promise<User> => {

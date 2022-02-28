@@ -31,7 +31,7 @@ export const AuthService = {
         try {
             const user = new User()
             user.id = userId
-            return ['team','ids']
+            return ['team', 'ids']
         } catch (e) {
             throw e
         }

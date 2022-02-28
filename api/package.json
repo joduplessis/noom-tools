@@ -10,7 +10,9 @@
         "prettier:check": "prettier --check 'src/**/*.ts'",
         "prettier": "prettier --print-width 200 --write 'src/**/*.ts'",
         "prettier:commit": "pretty-quick --staged --print-width 200",
-        "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
+        "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+        "test:watch": "tap --reporter=list --watch --ts",
+        "test": "tap --reporter=list --ts"
     },
     "keywords": [],
     "author": "Jo du Plessis",
@@ -51,11 +53,17 @@
         "@types/jsonwebtoken": "^8.5.8",
         "@types/node": "^17.0.15",
         "@types/redis": "^4.0.11",
+        "light-my-request": "^4.8.0",
         "nodemon": "^2.0.15",
         "prettier": "^2.5.1",
         "pretty-quick": "^3.1.3",
+        "supertest": "^6.2.2",
+        "tap": "^15.1.6",
         "ts-node": "^10.4.0",
         "typescript": "^4.5.5"
+    },
+    "tap": {
+        "check-coverage": false
     },
     "husky": {
         "hooks": {
