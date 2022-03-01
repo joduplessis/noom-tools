@@ -1,9 +1,8 @@
 import { renderHook, act } from '@testing-library/react-hooks'
-import { useWebsocket, useSubscription } from '../websocket.hook'
+//import { useWebsocket, useSubscription } from '../websocket.hook'
 
 test('should increment counter', () => {
-    const { result } = renderHook(() => useWebsocket())
-    const { result } = renderHook(() => useWebsocket())
+    //const { result } = renderHook(() => useWebsocket())
 
     act(() => {
         //result.current.increment()
