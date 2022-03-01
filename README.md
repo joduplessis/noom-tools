@@ -17,6 +17,7 @@ There are usually things that every product/project needs to do - Noom Tools aim
 - Secure S3 file uploads & downloads (Digital Ocean Spaces is supported too)
 - TypeOrm integration
 - A publishable UI library powered by Storybook
+- Component level tests using Testing Library
 - Prettier integration for a post-commit hook
 - PubSub service for the frontend
 - Storage for the frontend using LocalStorage (not cookies)
@@ -44,8 +45,9 @@ messageListener('user-007', (message) => {
 
 ## Roadmap
 
+- More components (instead of boilerplate)
+- More complete frontend app
 - Documentation - please see each folder for a README with more details
-- Better & more complete frontend app
 - More tests
 - Better type usages
 - Terraform deployment guide (TBC)
