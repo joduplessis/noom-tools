@@ -1,6 +1,5 @@
 import { logger } from '../helpers/util'
 import { useContext, useEffect, useRef, useState } from 'react'
-import uuid from 'uuid/v4'
 import { WebsocketContext } from '../contexts/websocket.context'
 import { usePubsub } from './pubsub.hook'
 

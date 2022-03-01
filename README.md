@@ -1,5 +1,7 @@
 # Noom Tools v0.0.1
 
+> This project is work-in-progress & will be updated whenever I get a chance
+
 Noom Tools is an opinionated boilerplate for creating realtime & component driven JAMStack apps. 
 
 ## What does this solve?
@@ -8,7 +10,6 @@ There are usually things that every product/project needs to do - Noom Tools aim
 
 - Typescript & linting everywhere
 - A RESTful API built with Fastify
-- Test setup & some preliminary tests with Supertest & Tap
 - A component library & frontend built with React (already ingrated with the API)
 - Realtime communication using websockets, Socket.io & Redis (for scaling the service)
 - Custom JWT based authentication & claims 
@@ -18,6 +19,8 @@ There are usually things that every product/project needs to do - Noom Tools aim
 - TypeOrm integration
 - A publishable UI library powered by Storybook
 - Component level tests using Testing Library
+- Frontend integration tests & prelim tests using Testing Library
+- Test setup & some preliminary API tests with Supertest & Tap
 - Prettier integration for a post-commit hook
 - PubSub service for the frontend
 - Storage for the frontend using LocalStorage (not cookies)
@@ -45,7 +48,7 @@ messageListener('user-007', (message) => {
 
 ## Roadmap
 
-- More components (instead of boilerplate)
+- More components
 - More complete frontend app
 - Documentation - please see each folder for a README with more details
 - More tests

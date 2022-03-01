@@ -43,7 +43,7 @@ export function useAuth() {
         try {
             const { token } = await AuthService.login(email, password)
             saveToken(token)
-            return true
+            return { token }
         } catch (error) {
             throw Error(error)
         }

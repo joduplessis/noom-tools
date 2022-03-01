@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { logger } from '../helpers/util'
-import uuid from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid'
 
 export function usePubsub() {
-    const [subscriptionId, setSubscriptionId] = useState(uuid())
+    const [subscriptionId, setSubscriptionId] = useState(uuidv4())
 
     const subscribe = (eventName: string, callback: any) => {
         PubsubService.getInstance().subscribe(eventName, subscriptionId, callback)
