@@ -8,7 +8,7 @@ export const STATUSES: any = {
     LATER: 'LATER',
     CLOSED: 'CLOSED',
 }
-export const API_LOCAL = 'http://localhost:3000'
+export const API_LOCAL = 'http://localhost:5000'
 export const API_LIVE = 'https://api.noom.app'
 export const INTERNAL_NOOM_MESSAGE = 'INTERNAL_NOOM_MESSAGE'
 export const NOOM_SYSTEM = 'NOOM_SYSTEM'

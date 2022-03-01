@@ -1,5 +1,6 @@
 import { API_HOST } from '../constants'
 import { returnParser } from '../helpers/util'
+import fetch from 'isomorphic-fetch'
 
 export class FilesService {
     static async delete(token: string, filename: string): Promise<any> {

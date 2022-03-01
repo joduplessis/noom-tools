@@ -13,7 +13,7 @@ test('should increment counter', () => {
         login,
         createAccount,
         resetPassword,
-        updatePassword
+        updatePassword,
     } = result.current
 
     act(() => {

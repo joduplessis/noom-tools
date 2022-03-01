@@ -4,7 +4,7 @@
     "description": "",
     "main": "dist/index.js",
     "scripts": {
-        "ngrok": "ngrok http 3000",
+        "ngrok": "ngrok http 5000",
         "start:dev": "nodemon",
         "start": "ts-node src/index.ts",
         "prettier:check": "prettier --check 'src/**/*.ts'",

@@ -98,8 +98,8 @@ export const AuthModule: FunctionComponent = (props: IAuthModule): ReactElement 
 
                     {view == VIEW.LOGIN && (
                         <div className="column">
-                            <input className="mb-500" type="text" value={email} placeholder="Email" onChange={(e: React.FormEvent<HTMLInputElement>) => setEmail(e.currentTarget.value)} />
-                            <input className="mb-500" type="password" value={password} placeholder="Password" onChange={(e: React.FormEvent<HTMLInputElement>) => setPassword(e.currentTarget.value)} />
+                            <input name="email" className="mb-500" type="text" value={email} placeholder="Email" onChange={(e: React.FormEvent<HTMLInputElement>) => setEmail(e.currentTarget.value)} />
+                            <input name="password" className="mb-500" type="password" value={password} placeholder="Password" onChange={(e: React.FormEvent<HTMLInputElement>) => setPassword(e.currentTarget.value)} />
                             <div className="mt-900">
                                 <button className="pl-900 pr-900" onClick={() => handleLogin()}>
                                     Login

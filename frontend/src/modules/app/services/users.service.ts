@@ -1,5 +1,6 @@
 import { API_HOST } from '../../../constants'
 import { returnParser } from '../../../helpers/util'
+import fetch from 'isomorphic-fetch'
 
 export class UsersService {
     static async update(token: string, values: any): Promise<any> {

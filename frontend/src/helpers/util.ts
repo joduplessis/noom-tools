@@ -1,6 +1,12 @@
 import { Dayjs } from 'dayjs'
 import { NODE_ENV, DATE_FORMAT_API, ERROR } from '../constants'
 
+export const waitForState = (callback, timeout = 500) => {
+    setTimeout(() => {
+        callback()
+    }, timeout)
+}
+
 export const routeIsActive = (path: string): boolean => {
     const { pathname } = window.location
     return path == pathname

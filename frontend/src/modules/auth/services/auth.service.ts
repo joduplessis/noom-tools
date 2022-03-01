@@ -1,5 +1,6 @@
 import { API_HOST } from '../../../constants'
 import { returnParser } from '../../../helpers/util'
+import fetch from 'isomorphic-fetch'
 
 export class AuthService {
     static async login(email: string, password: string): Promise<any> {

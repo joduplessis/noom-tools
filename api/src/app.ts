@@ -1,6 +1,4 @@
 import fastify from 'fastify'
-import cors from 'fastify-cors'
-import helmet from 'fastify-helmet'
 import { User } from './users/user.entity'
 import { createConnection } from 'typeorm'
 import * as dotenv from 'dotenv'
@@ -9,6 +7,11 @@ dotenv.config()
 
 export default (opts = {}) => {
     const app: any = fastify(opts)
+
+    app.register(require('fastify-cors'), {
+        origin: '*',
+        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+    })
 
     app.register(require('fastify-redis'), {
         host: process.env.REDIS_HOST,
@@ -26,12 +29,7 @@ export default (opts = {}) => {
             namespace: 'socket-io-sub',
         })
 
-    app.register(cors, {
-        origin: '*',
-        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    })
-
-    app.register(helmet)
+    app.register(require('fastify-helmet'))
 
     app.register(require('fastify-multipart'), {
         limits: {
