@@ -94,6 +94,10 @@ React Portals must be added to `src/portals`.
 
 React Contexts must be added to `src/contexts`.
 
+### Hooks
+
+React Hooks must be added to `src/hooks`.
+
 ### SASS
 
 Sass includes & partials must be added to `src/sass`.
