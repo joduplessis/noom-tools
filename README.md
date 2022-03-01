@@ -1,6 +1,6 @@
 # Noom Tools v0.0.1
 
-> This project is work-in-progress & will be updated whenever I get a chance
+> This project is work-in-progress 
 
 Noom Tools is an opinionated boilerplate for creating realtime & component driven JAMStack apps. 
 
