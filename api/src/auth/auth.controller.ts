@@ -5,7 +5,6 @@ import { UsersService } from '../users/users.service'
 import { AuthService } from './auth.service'
 
 export default async (fastify, opts) => {
-
     fastify.post('/auth/login', {}, async (request, reply) => {
         try {
             const { email, password } = request.body
@@ -51,8 +50,8 @@ export default async (fastify, opts) => {
             if (!user) throw 'Not found'
 
             await UsersService.update(fastify, { id: user.id, resetToken: token })
-            await MailService.sendPasswordReset(fastify, email, token) 
-            
+            await MailService.sendPasswordReset(fastify, email, token)
+
             return { success: true, token }
         } catch (error) {
             throw Error(error)

@@ -27,6 +27,5 @@ server.listen(port, (err, address) => {
         process.exit(1)
     } else {
         server.log.info(`Server listening on ${address}`)
-
     }
 })
