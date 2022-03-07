@@ -31,6 +31,10 @@ Rename `env.local` to `.env` & update the variables with the correct values.
 
 Linting is enforced at build-time with `ts-lint`. Code formatting is automated with [Prettier](https://prettier.io/). There is a pre-commit hook to format code before committing by using [Husky](https://github.com/typicode/husky). For more information on the specific rules, view the `.prettierrc` file.
 
+### Swagger
+
+Swagger documentation is available at the `/documentation` route.
+
 ---
 
 More coming soon!
