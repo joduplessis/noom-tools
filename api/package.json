@@ -37,6 +37,7 @@
         "fastify-postgres": "^3.6.0",
         "fastify-redis": "^4.3.3",
         "fastify-socket.io": "^3.0.0",
+        "fastify-swagger": "^4.17.1",
         "geoip-lite": "^1.4.3",
         "jsonwebtoken": "^8.5.1",
         "nanoid": "^3.2.0",

@@ -6,6 +6,9 @@ export default async function (fastify, opts) {
         {
             preValidation: [fastify.authenticate],
             schema: {
+                descrition: 'Updates a user',
+                tags: ['user'],
+                summary: 'Updates a user',
                 body: {
                     type: 'object',
                     required: ['name', 'image', 'email', 'password'],
@@ -16,6 +19,20 @@ export default async function (fastify, opts) {
                         password: { type: 'string' },
                     },
                 },
+                response: {
+                  201: {
+                    description: 'Successful response',
+                    type: 'object',
+                    properties: {
+                      user: { name: 'string', image: 'string' }
+                    }
+                  },
+                },
+                security: [
+                  {
+                    "apiKey": []
+                  }
+                ]
             },
         },
         async (request, reply) => {
