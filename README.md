@@ -51,6 +51,7 @@ messageListener('user-007', (message) => {
 ## Roadmap
 
 - More components
+- More complete backend API 
 - More complete frontend app
 - Documentation - please see each folder for a README with more details
 - More tests
