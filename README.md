@@ -31,7 +31,7 @@ There are usually things that every product/project needs to do - Noom Tools aim
 - Sentry integration for catching errors
 - React Query for cache & fetching data
 - A customizable webpack config geared for multi stage deployments
-- A set of easy to use React Hooks that makes integrating difficult tasks easy, listening for websocket events is as simple as:
+- A set of easy to use React Hooks that makes integrating difficult tasks easy, listening for websocket events (using `websocket.hook`) is as simple as:
 
 ``` javascript
 const { messageListener } = useSubscription()
