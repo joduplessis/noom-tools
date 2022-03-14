@@ -12,7 +12,7 @@ module.exports = fp(async function (fastify: any, options) {
         fastify.io.adapter(createAdapter(pubClient, subClient))
 
         fastify.io.on('connection', (socket) => {
-            const { sub, email, iss, iat, claims } = AuthService.verifyToken(fastify, socket.handshake.auth.token)
+            const { sub, email, iss, iat, scopes } = AuthService.verifyToken(fastify, socket.handshake.auth.token)
             const { id, rooms } = socket
 
             // Always join their username
@@ -35,7 +35,7 @@ module.exports = fp(async function (fastify: any, options) {
 
             socket.on('join', ({ room, token }) => {
                 const {
-                    payload: { sub, claims },
+                    payload: { sub, scopes },
                 } = AuthService.decodeToken(fastify, token)
 
                 // Test message
@@ -46,11 +46,11 @@ module.exports = fp(async function (fastify: any, options) {
                 if (sub == room) return
 
                 // This is the team ID
-                const claim = room.split('+')[0]
+                const scope = room.split('+')[0]
 
                 // Verify that they are allowed to this team
-                // claims are a list of team IDs
-                if (AuthService.verifyClaims(fastify, claim, claims)) {
+                // scopes are a list of team IDs
+                if (AuthService.verifyScopes(fastify, scope, scopes)) {
                     socket.join(room)
                     fastify.log.info(socket.id, ' just joined room: ', room)
                 } else {

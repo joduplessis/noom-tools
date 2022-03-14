@@ -27,14 +27,14 @@ export default async (fastify, opts) => {
                 if (!user) throw Error('not found')
 
                 const userId = user.id
-                const claims = await AuthService.getClaims(fastify, userId)
+                const scopes = await AuthService.getScopes(fastify, userId)
 
-                // The claims object above will always have the most up to date claims
+                // The scopes object above will always have the most up to date scopes
                 // So safe for us to clear their cache
                 await AuthService.clearInvalidations(fastify, userId)
 
-                // Return the token containing the claims
-                const token = AuthService.getToken(fastify, userId, email, claims)
+                // Return the token containing the scopes
+                const token = AuthService.getToken(fastify, userId, email, scopes)
 
                 return { token }
             } catch (error) {

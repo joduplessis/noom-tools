@@ -14,7 +14,7 @@ There are usually things that every product/project needs to do - Noom Tools aim
 - API Swagger documentation
 - A component library & frontend built with React (already ingrated with the API)
 - Realtime communication using websockets, Socket.io & Redis (for scaling the service)
-- Custom JWT based authentication & claims 
+- Custom JWT based authentication & scopes 
 - Tenant security at API level & also websocket subscription level
 - Mail service for integrating Postmark (easily replacable by any other service)
 - Secure S3 file uploads & downloads (Digital Ocean Spaces is supported too)

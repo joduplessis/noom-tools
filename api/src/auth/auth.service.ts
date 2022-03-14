@@ -15,9 +15,9 @@ export const AuthService = {
         }
     },
 
-    verifyClaims: (fastify: any, claim: string, claims: string[]) => {
+    verifyScopes: (fastify: any, scope: string, scopes: string[]) => {
         try {
-            if (claims.indexOf(claim) == -1) {
+            if (scopes.indexOf(scope) == -1) {
                 throw Error('Not allowed to this tenant')
             } else {
                 return true
@@ -27,7 +27,7 @@ export const AuthService = {
         }
     },
 
-    getClaims: async (fastify: any, userId: string) => {
+    getScopes: async (fastify: any, userId: string) => {
         try {
             const user = new User()
             user.id = userId
@@ -69,17 +69,17 @@ export const AuthService = {
         }
     },
 
-    getExternalToken: (fastify: any, email: string, claim: string) => {
+    getExternalToken: (fastify: any, email: string, scope: string) => {
         try {
-            return fastify.jwt.external.sign({ email, claim })
+            return fastify.jwt.external.sign({ email, scope })
         } catch (e) {
             throw e
         }
     },
 
-    getToken: (fastify: any, userId: string, email: string, claims: any) => {
+    getToken: (fastify: any, userId: string, email: string, scopes: any) => {
         try {
-            return fastify.jwt.internal.sign({ sub: userId, email, claims })
+            return fastify.jwt.internal.sign({ sub: userId, email, scopes })
         } catch (e) {
             throw e
         }
@@ -95,42 +95,42 @@ export const AuthService = {
         }
     },
 
-    validateClaim: async (fastify: any, userId: string, claim: any) => {
+    validateScope: async (fastify: any, userId: string, scope: any) => {
         try {
-            let claims = await fastify.redis['invalidate'].get(userId)
+            let scopes = await fastify.redis['invalidate'].get(userId)
 
-            if (!claims) {
-                claims = [claim]
+            if (!scopes) {
+                scopes = [scope]
             } else {
-                claims = [...claims, claim]
+                scopes = [...scopes, scope]
             }
 
-            await fastify.redis['invalidate'].set(userId, claims)
+            await fastify.redis['invalidate'].set(userId, scopes)
         } catch (error) {
             throw Error(error)
         }
     },
 
-    getInvalidClaims: async (fastify: any, userId: string) => {
+    getInvalidScopes: async (fastify: any, userId: string) => {
         try {
-            const claims = await fastify.redis['invalidate'].get(userId)
-            return claims || []
+            const scopes = await fastify.redis['invalidate'].get(userId)
+            return scopes || []
         } catch (error) {
             throw Error(error)
         }
     },
 
-    invalidateClaim: async (fastify: any, userId: string, claim: any) => {
+    invalidateScope: async (fastify: any, userId: string, scope: any) => {
         try {
-            let claims = await fastify.redis['invalidate'].get(userId)
+            let scopes = await fastify.redis['invalidate'].get(userId)
 
-            if (!claims) {
-                claims = [claim]
+            if (!scopes) {
+                scopes = [scope]
             } else {
-                claims = [...claims, claim]
+                scopes = [...scopes, scope]
             }
 
-            await fastify.redis['invalidate'].set(userId, claims)
+            await fastify.redis['invalidate'].set(userId, scopes)
         } catch (error) {
             throw Error(error)
         }
