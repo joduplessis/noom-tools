@@ -1,8 +1,3 @@
-import { logger } from '../helpers/util'
-import uuid from 'uuid/v4'
-import io from 'socket.io-client'
-import { useState, useEffect } from 'react'
-
 export function useStorage() {
     return {
         setStorage: (name: string, val: string): void => {

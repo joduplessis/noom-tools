@@ -13,7 +13,7 @@ export const App = (props) => {
             <QueryClientProvider client={queryClient}>
                 <AppProvider>
                     <Switch>
-                        <Route path="/app/:accountId" component={AppModule} />
+                        <Route path="/app" component={AppModule} />
                         <Route path="/auth" component={AuthModule} />
                     </Switch>
                 </AppProvider>
