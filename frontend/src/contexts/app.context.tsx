@@ -1,21 +1,24 @@
-import React, { createContext, useState } from 'react'
-import { IAppContext } from '../types/IAppContext'
+import React, { createContext, useReducer } from 'react'
 
-const defaultAppContext: IAppContext = {
-    setApp: (appState: IAppContext) => {},
+export const defaultAppState: any = { theme: null }
+
+export enum AppActions {
+    Theme = 'Theme',
 }
 
-export const AppContext = createContext(defaultAppContext)
+const appReducer: any = (state, action) => {
+    switch (action.type) {
+        case AppActions.Theme:
+            return { ...state, theme: action.payload }
+        default:
+            return state
+    }
+}
+
+export const AppContext = createContext(defaultAppState)
 
 export const AppProvider = (props) => {
-    const setApp = (appState: IAppContext) => {
-        setState({ ...state, ...appState })
-    }
-    const initialState: IAppContext = {
-        ...defaultAppContext,
-        setApp,
-    }
-    const [state, setState] = useState(initialState)
+    const [state, dispatch] = useReducer(appReducer, { ...defaultAppState, ...props.value })
 
-    return <AppContext.Provider value={state}>{props.children}</AppContext.Provider>
+    return <AppContext.Provider value={{ state, dispatch }}>{props.children}</AppContext.Provider>
 }

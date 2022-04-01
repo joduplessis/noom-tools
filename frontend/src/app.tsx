@@ -11,7 +11,7 @@ export const App = (props) => {
     return (
         <Router>
             <QueryClientProvider client={queryClient}>
-                <AppProvider>
+                <AppProvider value={{ theme: null }}>
                     <Switch>
                         <Route path="/app" component={AppModule} />
                         <Route path="/auth" component={AuthModule} />

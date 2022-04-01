@@ -1,6 +1,7 @@
+import { AppActions, AppContext } from '../../contexts/app.context'
 import queryString from 'query-string'
-import React, { FunctionComponent, ReactElement, useEffect, useState } from 'react'
-import { useHistory, useLocation, useParams } from 'react-router-dom'
+import React, { FunctionComponent, ReactElement, useContext, useEffect, useState } from 'react'
+import { useHistory, useLocation } from 'react-router-dom'
 import { ERROR, VIEW } from '../../constants'
 import { logger } from '../../helpers/util'
 import { useAuth } from '../../hooks/auth.hook'
@@ -12,6 +13,7 @@ interface IAuthModule {
 
 export const AuthModule: FunctionComponent = (props: IAuthModule): ReactElement => {
     const history = useHistory()
+    const { state, dispatch } = useContext(AppContext)
     const [view, setdiv] = useState(VIEW.LOGIN)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -84,6 +86,13 @@ export const AuthModule: FunctionComponent = (props: IAuthModule): ReactElement 
     useEffect(() => {
         setError(null)
     }, [view])
+
+    useEffect(() => {
+        const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        const theme = dark ? 'dark' : 'light'
+
+        dispatch({ type: AppActions.Theme, payload: theme })
+    }, [])
 
     return (
         <div className="app-module">
