@@ -2,11 +2,11 @@
 
 > This project is work-in-progress ⚠️
 
-Noom Tools is an opinionated boilerplate for creating realtime & component driven JAMStack apps. 
+Noom Tools is an opinionated boilerplate for creating realtime & component driven JAMStack apps.
 
 ## What does this solve?
 
-There are usually things that every product/project needs to do - Noom Tools aims to be a starter kit for building quickly without a lot of reliance on 3rd party libs & frameworks. 
+There are usually things that every product/project needs to do - Noom Tools aims to be a starter kit for building quickly without a lot of reliance on 3rd party libs & frameworks.
 
 - Typescript & linting everywhere
 - A RESTful API built with Fastify
@@ -14,7 +14,7 @@ There are usually things that every product/project needs to do - Noom Tools aim
 - API Swagger documentation
 - A component library & frontend built with React (already ingrated with the API)
 - Realtime communication using websockets, Socket.io & Redis (for scaling the service)
-- Custom JWT based authentication & scopes 
+- Custom JWT based authentication & scopes
 - Tenant security at API level & also websocket subscription level
 - Mail service for integrating Postmark (easily replacable by any other service)
 - Secure S3 file uploads & downloads (Digital Ocean Spaces is supported too)
@@ -25,6 +25,7 @@ There are usually things that every product/project needs to do - Noom Tools aim
 - Test setup & some preliminary API tests with Supertest & Tap
 - Prettier integration for a post-commit hook
 - PubSub service for the frontend
+- useReducer/useContext setup for managing state Redux-style
 - Storage for the frontend using LocalStorage (not cookies)
 - Sass everywhere for styles using [BEM](http://getbem.com/)
 - A modular pattern for building a frontend application in a scalable way
@@ -33,13 +34,13 @@ There are usually things that every product/project needs to do - Noom Tools aim
 - A customizable webpack config geared for multi stage deployments
 - A set of easy to use React Hooks that makes integrating difficult tasks easy, listening for websocket events (using `websocket.hook`) is as simple as:
 
-``` javascript
-const { messageListener } = useSubscription()
+```javascript
+const { messageListener } = useSubscription();
 
-messageListener('user-007', (message) => {
-    // Do something here with the message
-})
-```  
+messageListener("user-007", (message) => {
+  // Do something here with the message
+});
+```
 
 ## What this isn't (or doesn't have)
 
@@ -51,7 +52,7 @@ messageListener('user-007', (message) => {
 ## Roadmap
 
 - More components
-- More complete backend API 
+- More complete backend API
 - More complete frontend app
 - Documentation - please see each folder for a README with more details
 - More tests
